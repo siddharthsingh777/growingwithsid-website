@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "PromptForge", "cat": "Prompt Engineering", "rating": 4.8, "desc": "Build, test and version your prompts like code — with built-in A/B comparisons.", "initial": "P", "link": "#" },
+  { "id": 2, "name": "FlowPilot", "cat": "Automation", "rating": 4.7, "desc": "Drag-and-drop AI workflows connecting your favorite apps in minutes.", "initial": "F", "link": "#" },
+  { "id": 3, "name": "NoteMind", "cat": "Productivity", "rating": 4.6, "desc": "An AI second brain that organizes notes, tasks and ideas automatically.", "initial": "N", "link": "#" },
+  { "id": 4, "name": "SiteCraft AI", "cat": "Website Builder", "rating": 4.5, "desc": "Describe your site in plain English and get a launch-ready page.", "initial": "S", "link": "#" },
+  { "id": 5, "name": "ClipGenius", "cat": "Content Creation", "rating": 4.7, "desc": "Turns long videos into short, caption-ready clips automatically.", "initial": "C", "link": "#" },
+  { "id": 6, "name": "InboxZero AI", "cat": "Automation", "rating": 4.4, "desc": "Triages, drafts and schedules your email replies while you focus elsewhere.", "initial": "I", "link": "#" }
+]
