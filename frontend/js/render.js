@@ -72,6 +72,75 @@ async function initReelsSection({ gridId, filtersId, loadMoreId, initialCount = 
   render();
 }
 
+/* ---------------- Instagram Posts ---------------- */
+function postCardHTML(p){
+  return `
+  <article class="post-card" data-cat="${p.cat}">
+    <div class="post-thumb">
+      <img src="${p.img}" alt="${p.caption}" loading="lazy" />
+      <span class="reel-cat-badge">${p.catLabel}</span>
+      <span class="post-type-badge"><i data-lucide="${p.type && p.type.startsWith('Carousel') ? 'layers' : 'image'}"></i> ${p.type || 'Single image'}</span>
+      <div class="play-icon post-view-icon"><i data-lucide="expand"></i></div>
+    </div>
+    <div class="reel-info">
+      <p class="post-caption">${p.caption}</p>
+      <div class="reel-meta">
+        <span><i data-lucide="heart"></i> ${p.likes}</span>
+        <span><i data-lucide="message-circle"></i> ${p.comments}</span>
+        <span><i data-lucide="calendar"></i> ${p.date}</span>
+      </div>
+      <a href="${p.link || 'https://instagram.com'}" target="_blank" rel="noopener" class="btn btn-glass">
+        <i class="fa-brands fa-instagram"></i> View on Instagram
+      </a>
+    </div>
+  </article>`;
+}
+
+async function initPostsSection({ gridId, filtersId, loadMoreId, initialCount = 6, step = 6 }){
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const filters = filtersId ? document.getElementById(filtersId) : null;
+  const loadMoreBtn = loadMoreId ? document.getElementById(loadMoreId) : null;
+
+  const allPosts = await getPosts();
+  let activeFilter = 'all';
+  let visibleCount = initialCount;
+
+  function render(){
+    const filtered = allPosts.filter(p => activeFilter === 'all' || p.cat === activeFilter);
+    const toShow = filtered.slice(0, visibleCount);
+    grid.innerHTML = toShow.map(postCardHTML).join('');
+    if (window.lucide) lucide.createIcons();
+    requestAnimationFrame(() => {
+      grid.querySelectorAll('.post-card').forEach((el,i) => {
+        setTimeout(() => el.classList.add('show'), i*60);
+      });
+    });
+    if (loadMoreBtn) loadMoreBtn.style.display = visibleCount >= filtered.length ? 'none' : 'inline-flex';
+  }
+
+  if (filters){
+    filters.addEventListener('click', (e) => {
+      const chip = e.target.closest('.filter-chip');
+      if (!chip) return;
+      filters.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeFilter = chip.dataset.filter;
+      visibleCount = initialCount;
+      render();
+    });
+  }
+
+  if (loadMoreBtn){
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCount += step;
+      render();
+    });
+  }
+
+  render();
+}
+
 /* ---------------- Blog ---------------- */
 function blogCardHTML(b){
   return `

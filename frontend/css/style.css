@@ -322,6 +322,33 @@ section{padding:120px 0;position:relative;}
 .load-more-wrap{display:flex;justify-content:center;margin-top:48px;}
 
 /* =========================================================
+   Instagram Posts grid
+   ========================================================= */
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;}
+.post-card{
+  border-radius:var(--radius-md);overflow:hidden;background:var(--surface);border:1px solid var(--border);
+  transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+  opacity:0;transform:translateY(24px);
+}
+.post-card.show{opacity:1;transform:translateY(0);}
+.post-card:hover{transform:translateY(-6px);border-color:rgba(225,48,108,0.4);box-shadow:0 20px 40px -20px rgba(225,48,108,0.25);}
+.post-thumb{position:relative;aspect-ratio:1/1;overflow:hidden;}
+.post-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.post-card:hover .post-thumb img{transform:scale(1.08);}
+.post-view-icon{width:48px;height:48px;}
+.post-view-icon i{width:18px;height:18px;margin-left:0;}
+.post-type-badge{
+  position:absolute;bottom:12px;left:12px;display:flex;align-items:center;gap:5px;
+  font-family:var(--font-mono);font-size:10.5px;padding:5px 10px;border-radius:100px;
+  background:rgba(9,9,9,0.6);backdrop-filter:blur(6px);border:1px solid var(--border-strong);
+}
+.post-type-badge i{width:11px;height:11px;}
+.post-caption{
+  margin:0 0 12px;font-size:13px;color:var(--white);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* =========================================================
    Blog section
    ========================================================= */
 .blog-controls{display:flex;flex-direction:column;align-items:center;gap:24px;margin-bottom:12px;}

@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Tools — Growing With Sid</title>
-<meta name="description" content="Hand-picked, tested AI tools for prompt engineering, automation, productivity and more." />
+<title>Instagram Posts — Growing With Sid</title>
+<meta name="description" content="Instagram carousels and single-image posts covering ChatGPT, automation, productivity and more." />
 
-<meta property="og:title" content="AI Tools — Growing With Sid" />
-<meta property="og:description" content="Hand-picked, tested AI tools for prompt engineering, automation, productivity and more." />
+<meta property="og:title" content="Instagram Posts — Growing With Sid" />
+<meta property="og:description" content="Instagram carousels and single-image posts covering ChatGPT, automation, productivity and more." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" />
-<meta property="og:url" content="https://growingwithsid.com/tools.html" />
+<meta property="og:url" content="https://growingwithsid.com/posts.html" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AI Tools — Growing With Sid" />
-<meta name="twitter:description" content="Hand-picked, tested AI tools for prompt engineering, automation, productivity and more." />
+<meta name="twitter:title" content="Instagram Posts — Growing With Sid" />
+<meta name="twitter:description" content="Instagram carousels and single-image posts covering ChatGPT, automation, productivity and more." />
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" />
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23090909%22 stroke=%22%2300E5FF%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22%234F9DFF%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>S</text></svg>" />
@@ -52,7 +52,7 @@
       <a href="index.html">Home</a>
       <a href="posts.html">Posts</a>
       <a href="blog.html">Blog</a>
-      <a href="tools.html" class="active">AI Tools</a>
+      <a href="tools.html">AI Tools</a>
       <a href="about.html">About</a>
       <a href="community.html">Community</a>
       <a href="contact.html">Contact</a>
@@ -88,15 +88,30 @@
   <div class="hero-blob blob-1"></div>
   <div class="hero-blob blob-2"></div>
   <div class="page-header-content">
-    <div class="breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;"></i> <span>AI Tools</span></div>
-    <span class="section-eyebrow">// Stack</span>
-    <h1>AI tools I actually use</h1>
-    <p>Hand-picked, tested, and reviewed — no random affiliate spam.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;"></i> <span>Posts</span></div>
+    <span class="section-eyebrow">// Feed Grid</span>
+    <h1>Instagram posts</h1>
+    <p>Carousels, single-image breakdowns, and save-it-for-later graphics from the feed.</p>
   </div>
 </section>
-<section class="tools-section section-tight">
+<section class="reels-section section-tight">
   <div class="container">
-    <div class="tools-grid" id="toolsGrid"></div>
+    <div class="filter-bar" id="postFilters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="ai-tools">AI Tools</button>
+      <button class="filter-chip" data-filter="chatgpt">ChatGPT</button>
+      <button class="filter-chip" data-filter="automation">Automation</button>
+      <button class="filter-chip" data-filter="productivity">Productivity</button>
+      <button class="filter-chip" data-filter="websites">Websites</button>
+      <button class="filter-chip" data-filter="tutorials">Tutorials</button>
+      <button class="filter-chip" data-filter="tips">Tips &amp; Tricks</button>
+    </div>
+
+    <div class="posts-grid" id="postsGrid"></div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-glass" id="loadMorePosts">Load More Posts <i data-lucide="refresh-cw"></i></button>
+    </div>
   </div>
 </section>
 
@@ -156,7 +171,7 @@
 <script>
 
 document.addEventListener('DOMContentLoaded', () => {
-  initToolsSection({ gridId: 'toolsGrid' });
+  initPostsSection({ gridId: 'postsGrid', filtersId: 'postFilters', loadMoreId: 'loadMorePosts', initialCount: 9, step: 6 });
 });
 
 </script>

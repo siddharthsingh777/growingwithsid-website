@@ -16,6 +16,7 @@ const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '*').split(',').map(s =>
 const DATA_DIR = path.join(__dirname, 'data');
 const FILES = {
   reels: path.join(DATA_DIR, 'reels.json'),
+  posts: path.join(DATA_DIR, 'posts.json'),
   blogs: path.join(DATA_DIR, 'blogs.json'),
   tools: path.join(DATA_DIR, 'tools.json'),
   testimonials: path.join(DATA_DIR, 'testimonials.json'),
@@ -70,6 +71,15 @@ app.get('/api/reels', (req, res) => {
     reels = reels.filter(r => r.cat === category);
   }
   res.json(reels);
+});
+
+app.get('/api/posts', (req, res) => {
+  const { category } = req.query;
+  let posts = readJSON(FILES.posts);
+  if (category && category !== 'all') {
+    posts = posts.filter(p => p.cat === category);
+  }
+  res.json(posts);
 });
 
 app.get('/api/blogs', (req, res) => {
@@ -136,6 +146,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
     subscribers: readJSON(FILES.subscribers).length,
     messages: readJSON(FILES.messages).length,
     reels: readJSON(FILES.reels).length,
+    posts: readJSON(FILES.posts).length,
     blogs: readJSON(FILES.blogs).length,
     tools: readJSON(FILES.tools).length,
   });

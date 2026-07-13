@@ -50,6 +50,7 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="index.html" class="active">Home</a>
+      <a href="posts.html">Posts</a>
       <a href="blog.html">Blog</a>
       <a href="tools.html">AI Tools</a>
       <a href="about.html">About</a>
@@ -72,6 +73,7 @@
 <!-- ================= MOBILE MENU ================= -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
+  <a href="posts.html">Posts</a>
   <a href="blog.html">Blog</a>
   <a href="tools.html">AI Tools</a>
   <a href="about.html">About</a>
@@ -90,7 +92,7 @@
   <div class="hero-blob blob-3"></div>
 
   <div class="hero-content">
-    <div class="eyebrow reveal-up"><span class="dot-live"></span> LIVE — New reel drops daily</div>
+    <div class="eyebrow reveal-up"><span class="dot-live"></span> LIVE — New reel drops Weekly</div>
     <h1 class="hero-title reveal-up" data-delay="1">
       Master <span class="grad-text">AI</span> & Transform<br class="lg-only" />
       Your Digital <span class="grad-text-2">Life</span>
@@ -104,7 +106,7 @@
       <a href="reels.html" class="btn btn-primary">
         <i data-lucide="play"></i> Watch Reels
       </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-glass">
+      <a href="https://www.instagram.com/growingwithsid?igsh=MWo1bWpocDBsN2U1bg==" target="_blank" rel="noopener" class="btn btn-glass">
         <i class="fa-brands fa-instagram"></i> Visit Instagram
       </a>
       <a href="blog.html" class="btn btn-ghost">
@@ -113,11 +115,11 @@
     </div>
 
     <div class="hero-stats reveal-up" data-delay="4">
-      <div><strong data-counter="128000">0</strong><span>Followers</span></div>
+      <div><strong data-counter="802">0</strong><span>Followers</span></div>
       <div class="hero-stat-divider"></div>
-      <div><strong data-counter="420">0</strong><span>Reels Published</span></div>
+      <div><strong data-counter="0">0</strong><span>Reels Published</span></div>
       <div class="hero-stat-divider"></div>
-      <div><strong data-counter="18500000" data-suffix="+">0</strong><span>Total Views</span></div>
+      <div><strong data-counter="0" data-suffix="+">0</strong><span>Total Views</span></div>
     </div>
   </div>
 
@@ -172,6 +174,23 @@
 
     <div class="section-foot">
       <a href="reels.html" class="btn btn-glass">View All Reels <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTAGRAM POSTS PREVIEW ================= -->
+<section class="posts-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">// Feed Grid</span>
+      <h2><i class="fa-brands fa-instagram" style="color:var(--instagram);"></i> Instagram posts</h2>
+      <p class="section-sub">Carousels and single-image breakdowns — the slower, save-it-for-later side of the feed.</p>
+    </div>
+
+    <div class="posts-grid" id="postsPreviewGrid"></div>
+
+    <div class="section-foot">
+      <a href="posts.html" class="btn btn-glass">View All Posts <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -284,6 +303,7 @@
     <div class="footer-col">
       <h4>Explore</h4>
       <a href="reels.html">Reels</a>
+      <a href="posts.html">Posts</a>
       <a href="blog.html">Blog</a>
       <a href="tools.html">AI Tools</a>
       <a href="about.html">About</a>
@@ -318,6 +338,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initReelsSection({ gridId: 'reelsPreviewGrid', initialCount: 4 });
+  initPostsSection({ gridId: 'postsPreviewGrid', initialCount: 4 });
   initToolsSection({ gridId: 'toolsPreviewGrid', limit: 3 });
   initTestimonialsSection({ trackId: 'testimonialTrack', dotsId: 'testimonialDots' });
 });

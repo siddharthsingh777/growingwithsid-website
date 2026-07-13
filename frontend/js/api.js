@@ -28,6 +28,7 @@ async function apiPost(path, body) {
 }
 
 async function getReels() { return apiGet('/reels', FALLBACK_REELS); }
+async function getPosts() { return apiGet('/posts', FALLBACK_POSTS); }
 async function getBlogs() { return apiGet('/blogs', FALLBACK_BLOGS); }
 async function getTools() { return apiGet('/tools', FALLBACK_TOOLS); }
 async function getTestimonials() { return apiGet('/testimonials', FALLBACK_TESTIMONIALS); }
