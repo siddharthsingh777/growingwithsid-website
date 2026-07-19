@@ -18,7 +18,7 @@ function reelCardHTML(r){
         <span><i data-lucide="calendar"></i> ${r.date}</span>
       </div>
       <a href="${r.link || 'https://instagram.com'}" target="_blank" rel="noopener" class="btn btn-glass">
-        <i data-lucide="instagram"></i> Watch on Instagram
+        <i class="fa-brands fa-instagram"></i> Watch on Instagram
       </a>
     </div>
   </article>`;
