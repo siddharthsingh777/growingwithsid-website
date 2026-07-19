@@ -153,7 +153,7 @@ function blogCardHTML(b){
       </div>
       <h3>${b.title}</h3>
       <p>${b.excerpt}</p>
-      <a href="#" class="blog-read">Read More <i data-lucide="arrow-right"></i></a>
+      <a href="${b.link || '#'}" target="_blank" rel="noopener" class="blog-read">Read More <i data-lucide="arrow-right"></i></a>
     </div>
   </article>`;
 }
