@@ -14,10 +14,7 @@ function reelCardHTML(r){
     </div>
     <div class="reel-info">
       <h4>${r.title}</h4>
-      <p>${r.desc}</p>
       <div class="reel-meta">
-        <span><i data-lucide="eye"></i> ${r.views}</span>
-        <span><i data-lucide="heart"></i> ${r.likes}</span>
         <span><i data-lucide="calendar"></i> ${r.date}</span>
       </div>
       <a href="${r.link || 'https://instagram.com'}" target="_blank" rel="noopener" class="btn btn-glass">
@@ -83,10 +80,7 @@ function postCardHTML(p){
       <div class="play-icon post-view-icon"><i data-lucide="expand"></i></div>
     </div>
     <div class="reel-info">
-      <p class="post-caption">${p.caption}</p>
       <div class="reel-meta">
-        <span><i data-lucide="heart"></i> ${p.likes}</span>
-        <span><i data-lucide="message-circle"></i> ${p.comments}</span>
         <span><i data-lucide="calendar"></i> ${p.date}</span>
       </div>
       <a href="${p.link || 'https://instagram.com'}" target="_blank" rel="noopener" class="btn btn-glass">
